@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.chatwithdeepseek.app'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'com.chatwithdeepseek.app'
+        minSdk 26
+        targetSdk 36
+        versionCode 5
+        versionName '0.1.4'
+    }
+
+    buildTypes {
+        debug {
+            // 调试包不压缩 JS，方便排查
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+            // 未配置正式签名时沿用调试签名，保证 `assembleRelease` 可直接产出可安装包
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // 网页资源已带 contenthash，保持原样打包即可（不要再压缩，避免 mermaid 等大文件出错）
+    androidResources {
+        noCompress 'woff', 'woff2', 'ttf'
+    }
+}
+
+dependencies {
+    // WebViewAssetLoader：以 https 伪源提供本地资源，避免 file:// 的 origin=null 触发跨域失败
+    implementation 'androidx.webkit:webkit:1.18.0'
+    // AppCompatActivity / ActivityCompat / OnBackPressedDispatcher
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.activity:activity:1.9.3'
+}

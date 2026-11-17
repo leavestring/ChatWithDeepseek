@@ -1,0 +1,6 @@
+// Android WebView 壳工程的顶层构建文件。
+// 版本与 DSH 所在机器已缓存的产物对齐：Gradle 9.4.1 + AGP 9.2.1，
+// 这样首次构建无需再下载一大套工具链。
+plugins {
+    id 'com.android.application' version '9.2.1' apply false
+}

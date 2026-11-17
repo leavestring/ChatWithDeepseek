@@ -1,0 +1,113 @@
+/**
+ * 余额徽标与充值操作区。
+ * 颜色全部走 dsw 设计令牌，自动跟随明暗主题。
+ */
+
+.badge,
+.badgeEmpty {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 34px;
+  padding: 0 10px 0 6px;
+  border: none;
+  border-radius: 12px;
+  background: none;
+  font: inherit;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: background-color var(--ds-transition-duration) var(--ds-ease-in-out);
+
+  &:hover {
+    background-color: var(--dsw-specific-sidebar-nav-item-hover);
+  }
+
+  &:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--dsw-alias-button-primary-fill);
+  }
+}
+
+.badge {
+  color: var(--dsw-alias-label-primary);
+}
+
+.badgeEmpty {
+  color: var(--dsw-alias-label-tertiary);
+}
+
+.badgeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--dsw-alias-brand-text);
+}
+
+.badgeEmpty .badgeIcon {
+  color: var(--dsw-alias-label-caption);
+}
+
+.badgeText {
+  min-width: 0;
+  overflow: hidden;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 16px;
+}
+
+.actionsCompact {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.link,
+.primaryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 13px;
+  line-height: 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px var(--dsw-alias-button-primary-fill);
+  }
+}
+
+.link {
+  color: var(--dsw-alias-label-secondary);
+
+  &:hover {
+    color: var(--dsw-alias-label-primary);
+  }
+}
+
+.primaryLink {
+  font-weight: 500;
+  color: var(--dsw-alias-brand-text);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
