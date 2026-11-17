@@ -18,9 +18,18 @@
 
 Android 首次安装需要允许“安装未知来源应用”。当前 APK 使用项目调试签名构建，适合个人侧载与测试，不是 Google Play 商店包，也不代表 DeepSeek 官方发布。API Key 仅保存在本机。
 
+## 界面展示
+
+<p align="center">
+  <img src="docs/screenshots/mobile-chat-light.png" alt="ChatWithDeepseek 手机端对话界面" width="420" />
+</p>
+
+手机端对话界面：深度思考、智能搜索、Markdown 排版、引用角标、消息操作与吸底输入栏。项目同时保留桌面端侧边栏布局，并支持深色/浅色主题。
+
 ## 目录
 
 - [下载安装](#下载安装)
+- [界面展示](#界面展示)
 - [项目重点](#项目重点)
 - [功能](#功能)
 - [技术栈](#技术栈)
