@@ -20,9 +20,9 @@ Android 首次安装需要允许“安装未知来源应用”。当前 APK 使�
 
 ## 界面展示
 
-<p align="center">
-  <img src="docs/screenshots/mobile-chat-light.png" alt="ChatWithDeepseek 手机端对话界面" width="420" />
-</p>
+| 首页 | 对话 |
+| :---: | :---: |
+| <img src="docs/screenshots/mobile-home-light.png" alt="ChatWithDeepseek 手机端首页" width="320" /> | <img src="docs/screenshots/mobile-chat-light.png" alt="ChatWithDeepseek 手机端对话界面" width="320" /> |
 
 手机端对话界面：深度思考、智能搜索、Markdown 排版、引用角标、消息操作与吸底输入栏。项目同时保留桌面端侧边栏布局，并支持深色/浅色主题。
 
