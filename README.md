@@ -10,8 +10,17 @@
 >
 > **权利归属**：DeepSeek 名称、鲸鱼标识、商标、产品界面设计及相关权利归 DeepSeek 所有。本项目不主张任何相关商标或品牌权利。
 
+## 下载安装
+
+- 最新版本：[GitHub Releases](https://github.com/leavestring/ChatWithDeepseek/releases/latest)
+- 直接下载 Android APK：[ChatWithDeepseek-0.1.4.apk](https://github.com/leavestring/ChatWithDeepseek/releases/download/v0.1.4/ChatWithDeepseek-0.1.4.apk)
+- 历史版本与更新说明：在 Releases 页面查看
+
+Android 首次安装需要允许“安装未知来源应用”。当前 APK 使用项目调试签名构建，适合个人侧载与测试，不是 Google Play 商店包，也不代表 DeepSeek 官方发布。API Key 仅保存在本机。
+
 ## 目录
 
+- [下载安装](#下载安装)
 - [项目重点](#项目重点)
 - [功能](#功能)
 - [技术栈](#技术栈)
@@ -201,15 +210,19 @@ npm run build
 npm run android:sync
 cd android
 .\gradlew.bat assembleDebug
+.\gradlew.bat assembleRelease
 ```
 
 APK 输出路径：
 
 ```text
 android/app/build/outputs/apk/debug/app-debug.apk
+android/app/build/outputs/apk/release/app-release.apk
 ```
 
 `android:sync` 会把 `dist/` 同步到 `android/app/src/main/assets/web/`。Android 使用 `WebViewAssetLoader` 以 HTTPS 伪源加载本地资源，保证 IndexedDB、localStorage 和 Web API 的 origin 行为正常。
+
+GitHub Releases 中的 APK 来自 `assembleRelease`。当前项目没有单独配置正式签名，Release 构建沿用调试签名，因此适合侧载测试，不适用于应用商店正式分发。
 
 > `package.json` 中的 `android:apk` 便捷脚本依赖本地 `scripts/build-apk.ps1`；如果该文件不存在，请使用上面的 Gradle 命令。
 
